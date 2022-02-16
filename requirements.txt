@@ -2,5 +2,4 @@ fastapi==0.70.1
 uvicorn==0.16.0
 Jinja2==3.0.3
 mecab-python3==1.0.4
-unidic-lite==1.0.8
 pymlask==0.3.2
