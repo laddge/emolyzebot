@@ -6,6 +6,8 @@ from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from jinja2 import Environment, FileSystemLoader
 
+from src.analyze import analyze
+
 
 app = FastAPI()
 
@@ -41,3 +43,8 @@ async def read_root():
     )
     html = env.get_template("index.html").render()
     return HTMLResponse(content=html, status_code=200)
+
+
+@app.get("/analyze")
+async def get_analyze(text: str):
+    return analyze(text)
