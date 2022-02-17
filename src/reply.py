@@ -22,6 +22,8 @@ def reply(status, pid):
     for _ in range(3):
         try:
             parent = api.get_status(pid)
+            if parent.user.screen_name == "emolyzebot":
+                break
             text = re.sub(
                 r"https?://[\w!\?/\+\-_~=;\.,\*&@#\$%\(\)'\[\]]+", "", parent.text)
             buff = BytesIO(genimg(text))
