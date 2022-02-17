@@ -19,11 +19,12 @@ def genimg(obj):
         obj["neu"] * 100), fill=fg, font=font)
     draw.text((100, 240), "POS (ポジティブ)  = {}%".format(
         obj["pos"] * 100), fill=fg, font=font)
-    if obj["compound"] > 0:
-        gr_color = (255, 86, 86)
-    elif obj["compound"] < 0:
-        gr_color = (86, 86, 255)
-    draw.rectangle((600, 380, 600 + int(500 * obj["compound"]), 540), fill=gr_color)
+    if obj["compound"]:
+        if obj["compound"] > 0:
+            gr_color = (255, 86, 86)
+        else:
+            gr_color = (86, 86, 255)
+        draw.rectangle((600, 380, 600 + int(500 * obj["compound"]), 540), fill=gr_color)
     draw.line((600, 340, 600, 580), fill=fg, width=8)
     draw.text((600, 600), ("+" if obj["compound"] > 0 else "") +
               str(obj["compound"]), fill=fg, font=font, anchor="ma")
