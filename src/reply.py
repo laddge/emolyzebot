@@ -16,6 +16,7 @@ limited = False
 
 
 def reply(status, pid):
+    global limited
     if limited:
         time.sleep(900)
     for _ in range(3):
@@ -29,7 +30,6 @@ def reply(status, pid):
                 filename="img.png", file=buff, in_reply_to_status_id=status.id)
         except Exception as e:
             print(e)
-            global limited
             limited = True
             time.sleep(900)
         else:
