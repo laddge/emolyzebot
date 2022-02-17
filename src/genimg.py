@@ -14,11 +14,11 @@ def genimg(obj):
     img = PIL.Image.new("RGB", (1200, 675), bg)
     draw = PIL.ImageDraw.Draw(img)
     draw.text((100, 80), "NEG (ネガティブ)  = {}%".format(
-        obj["neg"] * 100), fill=fg, font=font)
+        round(obj["neg"] * 100, 1)), fill=fg, font=font)
     draw.text((100, 160), "NEU   (中立的)    = {}%".format(
-        obj["neu"] * 100), fill=fg, font=font)
+        round(obj["neu"] * 100, 1)), fill=fg, font=font)
     draw.text((100, 240), "POS (ポジティブ)  = {}%".format(
-        obj["pos"] * 100), fill=fg, font=font)
+        round(obj["pos"] * 100, 1)), fill=fg, font=font)
     if obj["compound"]:
         if obj["compound"] > 0:
             gr_color = (255, 86, 86)
