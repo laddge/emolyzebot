@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from jinja2 import Environment, FileSystemLoader
 
 from src.analyze import analyze
+from src.genimg import genimg
 
 
 app = FastAPI()
@@ -48,3 +49,8 @@ async def read_root():
 @app.get("/analyze")
 async def get_analyze(text: str):
     return analyze(text)
+
+
+@app.get("/genimg")
+async def get_genimg(text: str):
+    return genimg(text)
