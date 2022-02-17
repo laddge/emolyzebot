@@ -30,8 +30,9 @@ def reply(status, pid):
                 filename="img.png", file=buff, in_reply_to_status_id=status.id)
         except Exception as e:
             print(e)
-            limited = True
-            time.sleep(900)
+            if "Rate" in str(e):
+                limited = True
+                time.sleep(900)
         else:
             break
 
