@@ -8,6 +8,8 @@ from jinja2 import Environment, FileSystemLoader
 
 from src.analyze import analyze
 from src.genimg import genimg
+import src.reply
+src.reply.main()
 
 
 app = FastAPI()

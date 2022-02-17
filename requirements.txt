@@ -4,3 +4,4 @@ Jinja2==3.0.3
 nltk==3.7
 googletrans==4.0.0rc1
 Pillow==9.0.0
+tweepy==4.5.0
