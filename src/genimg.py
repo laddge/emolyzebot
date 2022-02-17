@@ -2,7 +2,6 @@ import PIL.ImageDraw
 import PIL.ImageFont
 import os
 from io import BytesIO
-import analyze
 
 font = PIL.ImageFont.truetype(
     os.path.join(os.path.dirname(__file__), "files/font.ttf"), 60
@@ -11,8 +10,7 @@ bg = (244, 245, 247)
 fg = (30, 30, 30)
 
 
-def genimg(text):
-    obj = analyze.analyze(text)
+def genimg(obj):
     img = PIL.Image.new("RGB", (1200, 675), bg)
     draw = PIL.ImageDraw.Draw(img)
     draw.text((100, 80), "NEG (ネガティブ)  = {}%".format(

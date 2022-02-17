@@ -53,4 +53,4 @@ async def get_analyze(text: str):
 
 @app.get("/genimg")
 async def get_genimg(text: str):
-    return genimg(text)
+    return genimg(analyze(text))
