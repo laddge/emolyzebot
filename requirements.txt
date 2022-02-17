@@ -1,6 +1,5 @@
 fastapi==0.70.1
 uvicorn==0.16.0
 Jinja2==3.0.3
-mecab-python3==1.0.4
-pymlask==0.3.2
-ipadic
+nltk==3.7
+googletrans==4.0.0rc1
