@@ -53,4 +53,4 @@ async def get_analyze(text: str):
 
 @app.get("/genimg")
 async def get_genimg(text: str):
-    return genimg(analyze(text))
+    return Response(content=genimg(analyze(text)), media_type="image/png")
