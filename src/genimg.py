@@ -23,9 +23,9 @@ def genimg(text):
         round(obj["pos"] * 100, 1)), fill=fg, font=font)
     if obj["compound"]:
         if obj["compound"] > 0:
-            gr_color = (255, 86, 86)
+            gr_color = (86, 255, 86)
         else:
-            gr_color = (86, 86, 255)
+            gr_color = (255, 86, 86)
         draw.rectangle((600, 380, 600 + int(500 * obj["compound"]), 540), fill=gr_color)
     draw.line((600, 340, 600, 580), fill=fg, width=8)
     draw.text((600, 600), ("+" if obj["compound"] > 0 else "") +
