@@ -24,7 +24,7 @@ def reply(status, pid):
             parent = api.get_status(pid)
             if parent.user.screen_name == "emolyzebot":
                 break
-            if len(parent.text.split("@emolyzebot")) == 2:
+            if len(status.text.split("@emolyzebot")) == 2 and "@emolyzebot" in parent.text:
                 break
             text = re.sub(
                 r"https?://[\w!\?/\+\-_~=;\.,\*&@#\$%\(\)'\[\]]+", "", parent.text)
